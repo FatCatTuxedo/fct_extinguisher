@@ -5,7 +5,7 @@ lua54 'yes'
 name "ox_extinguisher"
 author "FatCatTuxedo"
 version "1.0.0"
-description ""
+description "Original by: Taylor-McGaw-Skyline-DEV/Sky-Extinguisher"
 
 client_scripts {
   'client.lua',
