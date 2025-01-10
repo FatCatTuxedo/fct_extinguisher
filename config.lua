@@ -4,10 +4,6 @@ Config.Locale = 'en'
 
 Config.Delay = 5000
 
-Config.FireJob = 'fire'
-
-Config.JobCheck = true
-
 Config.EX = {
     -666581633,
     -1980225301,

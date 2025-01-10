@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-name "sky_extinguisher"
-author ""
+name "ox_extinguisher"
+author "FatCatTuxedo"
 version "1.0.0"
 description ""
 
