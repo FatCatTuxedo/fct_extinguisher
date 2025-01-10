@@ -4,7 +4,7 @@ local optionsex = {
     {
         name = 'fire_menu',
         onSelect = function()
-            lib.showContext('fire_menu')
+            TriggerServerEvent('ox_extinguisher:process', cache.serverId)
         end,
         icon = 'fa-solid fa-fire-extinguisher',
         iconColor = '#e06666',
@@ -15,38 +15,11 @@ local optionsex = {
 
 exports.ox_target:addModel(modelex, optionsex)
 
----
-
-lib.registerContext({
-    id = 'fire_menu',
-    title = Translation[Config.Locale]['menu_header'],
-    options = {
-        {
-            title = Translation[Config.Locale]['menu_1'],
-            icon = 'plus',
-            iconColor = '#e06666',
-            onSelect = function()
-                TriggerServerEvent('sky:process')
-            end,
-        },
-        {
-            title = Translation[Config.Locale]['menu_2'],
-            icon = 'right-left',
-            iconColor = '#e06666',
-            onSelect = function()
-                TriggerServerEvent('sky:process')
-            end,
-        },
-    }
-})
-
----
-
-RegisterNetEvent('getnewex')
-AddEventHandler('getnewex', function()
+RegisterNetEvent('ox_extinguisher:getnewex')
+AddEventHandler('ox_extinguisher:getnewex', function()
     lib.progressBar({
         duration = Config.Delay,
-        label = Translation[Config.Locale]['menu_2'],
+        label = Translation[Config.Locale]['getfire'],
         useWhileDead = false,
         canCancel = false,
         disable = {
@@ -58,10 +31,12 @@ AddEventHandler('getnewex', function()
             clip = 'machinic_loop_mechandplayer'
         },
     })
+    
+    TriggerServerEvent("gu_logs:addUntrustedLog", "Fire Extinguisher", "Grabbed a fire extinguisher")
 end)
 
-RegisterNetEvent('remex')
-AddEventHandler('remex', function()
+RegisterNetEvent('ox_extinguisher:remex')
+AddEventHandler('ox_extinguisher:remex', function()
     lib.progressBar({
         duration = Config.Delay,
         label = Translation[Config.Locale]['remfire'],
@@ -76,4 +51,6 @@ AddEventHandler('remex', function()
             clip = 'machinic_loop_mechandplayer'
         },
     })
+    
+    TriggerServerEvent("gu_logs:addUntrustedLog", "Fire Extinguisher", "Returned a fire extinguisher")
 end)
