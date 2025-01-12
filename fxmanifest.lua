@@ -2,9 +2,9 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-name "ox_extinguisher"
+name "fct_extinguisher"
 author "FatCatTuxedo"
-version "1.0.0"
+version "1.0.1"
 description "Original by: Taylor-McGaw-Skyline-DEV/Sky-Extinguisher"
 
 client_scripts {

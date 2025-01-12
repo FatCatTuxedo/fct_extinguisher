@@ -1,10 +1,10 @@
-RegisterNetEvent('ox_extinguisher:process', function(source)
+RegisterNetEvent('fct_extinguisher:process', function(source)
     print("triggered by "..source)
     local item = 'WEAPON_FIREEXTINGUISHER'
     local count = 1
 
     if exports.ox_inventory:GetItemCount(source, item) > 0 then
-        TriggerClientEvent('ox_extinguisher:remex', source)
+        TriggerClientEvent('fct_extinguisher:remex', source)
         Citizen.Wait(Config.Delay)
         exports.ox_inventory:RemoveItem(source, item, 1)
         TriggerClientEvent('ox_lib:notify', source, {
@@ -13,7 +13,7 @@ RegisterNetEvent('ox_extinguisher:process', function(source)
             type = 'inform'
         })
     else
-        TriggerClientEvent('ox_extinguisher:getnewex', source)
+        TriggerClientEvent('fct_extinguisher:getnewex', source)
         Citizen.Wait(Config.Delay)
         exports.ox_inventory:AddItem(source, item, count)
         TriggerClientEvent('ox_lib:notify', source, {

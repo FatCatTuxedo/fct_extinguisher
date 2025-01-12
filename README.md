@@ -1,4 +1,4 @@
-# ox_extinguisher
+# fct_extinguisher
 Allows a player to quickly grab any fire extinguisher object on the map.
 
 ## Requirements

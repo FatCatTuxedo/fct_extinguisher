@@ -2,9 +2,9 @@ local modelex = Config.EX
 
 local optionsex = {
     {
-        name = 'fire_menu',
+        name = 'fct_ext_menu',
         onSelect = function()
-            TriggerServerEvent('ox_extinguisher:process', cache.serverId)
+            TriggerServerEvent('gct_extinguisher:process', cache.serverId)
         end,
         icon = 'fa-solid fa-fire-extinguisher',
         iconColor = '#e06666',
@@ -15,8 +15,8 @@ local optionsex = {
 
 exports.ox_target:addModel(modelex, optionsex)
 
-RegisterNetEvent('ox_extinguisher:getnewex')
-AddEventHandler('ox_extinguisher:getnewex', function()
+RegisterNetEvent('fct_extinguisher:getnewex')
+AddEventHandler('fct_extinguisher:getnewex', function()
     lib.progressBar({
         duration = Config.Delay,
         label = Translation[Config.Locale]['getfire'],
@@ -31,12 +31,10 @@ AddEventHandler('ox_extinguisher:getnewex', function()
             clip = 'machinic_loop_mechandplayer'
         },
     })
-    
-    TriggerServerEvent("gu_logs:addUntrustedLog", "Fire Extinguisher", "Grabbed a fire extinguisher")
 end)
 
-RegisterNetEvent('ox_extinguisher:remex')
-AddEventHandler('ox_extinguisher:remex', function()
+RegisterNetEvent('fct_extinguisher:remex')
+AddEventHandler('fct_extinguisher:remex', function()
     lib.progressBar({
         duration = Config.Delay,
         label = Translation[Config.Locale]['remfire'],
@@ -51,6 +49,4 @@ AddEventHandler('ox_extinguisher:remex', function()
             clip = 'machinic_loop_mechandplayer'
         },
     })
-    
-    TriggerServerEvent("gu_logs:addUntrustedLog", "Fire Extinguisher", "Returned a fire extinguisher")
 end)
