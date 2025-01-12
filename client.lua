@@ -4,7 +4,7 @@ local optionsex = {
     {
         name = 'fct_ext_menu',
         onSelect = function()
-            TriggerServerEvent('gct_extinguisher:process', cache.serverId)
+            TriggerServerEvent('fct_extinguisher:process', cache.serverId)
         end,
         icon = 'fa-solid fa-fire-extinguisher',
         iconColor = '#e06666',
